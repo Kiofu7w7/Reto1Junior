@@ -30,6 +30,7 @@ footer img{
 
 footer .buttonClicked{
     background-color: #0E172C;
+    color: #85D1CE;
     padding: 8px 16px;
     border-radius: 80px;
     justify-content: center;
@@ -37,6 +38,13 @@ footer .buttonClicked{
     gap: 8px;
     height: 40px;
     width: 103px;
+    cursor: pointer;
+}
+
+.botonFooter{
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 footer a{
