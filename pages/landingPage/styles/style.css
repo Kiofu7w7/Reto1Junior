@@ -1,0 +1,32 @@
+body{
+    background-color: #FEC7D7;
+    min-height: 100vh;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer div{
+    display: flex;
+
+}
+
+footer img{
+    object-fit: contain;
+}
+
+footer div{
+    background-color: #0E172C;
+    padding: 8px 16px;
+    border-radius: 80px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+footer a{
+    text-decoration: none;
+    color: #85D1CE;
+}
