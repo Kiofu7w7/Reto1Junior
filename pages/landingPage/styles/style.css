@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 *{
     margin: 0;
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
 }
 
 body{
     background-color: #FEC7D7;
-    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
 }
 
 footer{
@@ -17,37 +23,137 @@ footer{
     left: 0;
     bottom: 0;
     width: 100%;
-}
-
-footer div{
-    display: flex;
-
+    flex-shrink: 0;
 }
 
 footer img{
-    object-fit: contain;
+    object-fit: scale-down;
 }
 
-footer .buttonClicked{
+footer .btnHome{
     background-color: #0E172C;
     color: #85D1CE;
     padding: 8px 16px;
     border-radius: 80px;
-    justify-content: center;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    gap: 8px;
     height: 40px;
     width: 103px;
     cursor: pointer;
 }
 
-.botonFooter{
-    justify-content: center;
-    align-items: center;
+.btnDivNoClick{
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
 }
+
 
 footer a{
     text-decoration: none;
     color: #85D1CE;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 327px;
+}
+
+
+.container .circuloAzul{
+    background-color: #85D1CE;
+    border-radius: 50%;
+    padding: 5%;
+    margin: 0 8px;
+    display: flex;
+}
+
+.container .botonesPerrosGatos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .botonesPerrosGatos .botonAnimal{
+    background-color: #0E172C;
+    color: #FFFFFE;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    padding: 8px 0;
+    width: 150px;
+    cursor: pointer;
+}
+
+.NoClickedBtn{
+    opacity: 0.5;
+}
+
+.container .botonesPerrosGatos .botonAnimal .nombreBtn{
+    margin: 0 8px;
+}
+
+.container .botonesPerrosGatos .botonAnimal img{
+    width: 40px;
+}
+
+.titulo{
+    margin-bottom: 5%;
+    font-family: Nunito;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.subTitulo{
+    margin-bottom: 5%;
+}
+
+.containerMascotasTargetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(156px, 1fr));
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 5%;
+    min-height: 520px;
+    height: 100vh;
+    overflow-y: auto; 
+    margin-bottom: 30%;
+    align-content: start;
+}
+
+.containerMascotasTargetas img {
+    padding-top: 5px;
+    cursor: pointer;
+    width: 156px;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: -8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.containerMascotasTargetas img:nth-child(odd) {
+    padding-top: 0;
+}
+
+.containerMascotasTargetas img:nth-child(even) {
+    padding-bottom: 0;
+}
+
+.animalCard {
+    position: relative;
+    width: 156px;
+    height: 250px;
+}
+
+.animalInfo {
+    position: absolute;
+    bottom: 0;
+    color: #FFFFFE;
+    font-weight: 700;
+    padding: 14px;
 }
