@@ -7,8 +7,76 @@
 
 body{
     background-color: #FEC7D7;
-    height: 100vh;
     display: flex;
     justify-content: center;
     padding-top: 2%;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+#contenedor{
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    background: #FFFFFE;
+    padding: 24px;
+}
+
+#imagenHTML{
+    max-width: 375px;
+    max-height: 442px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#sexoHTML, .razaLogo, #imgDireccion{
+    width: 24px;
+    height: 24px;
+}
+
+.primeraFila{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nombreSexo, .direccionDiv, .razaEdad{
+    display: flex;
+    align-items: center;
+}
+
+.divPerosonalidad{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 2px solid #A786DF;
+    width: min-content;
+}
+
+.imagenPersonalidad{
+    width: 40px;
+    height: 40px;
+}
+
+
+#contenedorPersonalidades{
+    display: flex;
+    justify-content: space-around;
+}
+
+.separacion{
+    margin-right: 8px;
+}
+
+#direccionHTML{
+    max-width: 170px;
+    font-size: small;
+}
+
+.espaciado{
+    margin-bottom: 32px;
 }
