@@ -2,7 +2,7 @@ const contenedorChats = document.getElementById("chatsJS");
 const idUser = "1"
 const chatsActivos = []
 
-const obtenerMascotas = async (url) => {
+const obtenerInfo = async (url) => {
     try {
         const response = await axios.get(url);
         return response;
@@ -43,7 +43,7 @@ const buscarUsuarios = async (idUser) => {
 
 async function obtenerYProcesarDatos() {
     try {
-        const respuesta = await obtenerMascotas("https://vercer-adopta.vercel.app/chats");
+        const respuesta = await obtenerInfo("https://vercer-adopta.vercel.app/chats");
 
         const idsMiembros = obtenerIdsMiembros(respuesta);
 
