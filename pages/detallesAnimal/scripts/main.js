@@ -1,7 +1,7 @@
 const urlPerros = 'https://vercer-adopta.vercel.app/caninos/'
 const urlGatos = 'https://vercer-adopta.vercel.app/gatitos/'
-const idRecuperado = localStorage.getItem("idMascotaDetalles")
-const tipoRecuperado = localStorage.getItem("perroGato")
+const idRecuperado = sessionStorage.getItem("idMascotaDetalles")
+const tipoRecuperado = sessionStorage.getItem("perroGato")
 let informacion;
 const imagenUrl = document.getElementById("imagenHTML")
 const nombre = document.getElementById("nombreHTML")
@@ -57,6 +57,32 @@ function crearPersonalidad(personalidad) {
 if (tipoRecuperado == "perro") {
     (async () => {
         const data = await mostrasMascotas(urlPerros, idRecuperado);
+        informacion = data.data
+        console.log(informacion)
+        imagenUrl.setAttribute("src", informacion.url)
+        nombre.innerHTML = informacion.Nombre
+        if (informacion.sexo == "macho") {
+            sexo.setAttribute("src", "https://res.cloudinary.com/dlwr6vxib/image/upload/v1702613338/reto1/icons/ctqwlhlhnopqmpeqyehb.png")
+        } else {
+            sexo.setAttribute("src", "https://res.cloudinary.com/dlwr6vxib/image/upload/v1702613337/reto1/icons/kkjjhsprraelueayhsen.png")
+        }
+        raza.innerText = informacion.raza
+        edad.innerText = informacion.edad
+        direccion.innerText = informacion.direccion
+        
+        for (let propiedad in informacion.personalidades) {
+            let valor = informacion.personalidades[propiedad];
+            if(valor){
+                crearPersonalidad(propiedad)
+            }
+        }
+        historiaTitulo.innerText = informacion.extra.titulo
+        historia.innerText = informacion.extra.descripcion
+
+    })();
+}else{
+    (async () => {
+        const data = await mostrasMascotas(urlGatos, idRecuperado);
         informacion = data.data
         console.log(informacion)
         imagenUrl.setAttribute("src", informacion.url)

@@ -33,12 +33,28 @@ function dibujarMascota(informacion) {
     });
 };
 
+async function cargarMascotas() {
+    if (sessionStorage.getItem("perroGato") === "perro") {
+        let mascotas = await mostrasMascotas(urlPerros);
+        dibujarMascota(mascotas);
+        botonGatos.classList.add("NoClickedBtn");
+        botonPerros.classList.remove("NoClickedBtn");
+    } else if (sessionStorage.getItem("perroGato") === "gato"){
+        let mascotas = await mostrasMascotas(urlGatos);
+        dibujarMascota(mascotas);
+        botonPerros.classList.add("NoClickedBtn");
+        botonGatos.classList.remove("NoClickedBtn");
+    }
+}
+
+cargarMascotas();
+
 botonPerros.addEventListener("click", async() => {
     let mascotas = await mostrasMascotas(urlPerros);
     dibujarMascota(mascotas);
     botonGatos.classList.add("NoClickedBtn")
     botonPerros.classList.remove("NoClickedBtn")
-    localStorage.setItem("perroGato", "perro")
+    sessionStorage.setItem("perroGato", "perro")
 })
 
 botonGatos.addEventListener("click", async() => {
@@ -46,12 +62,12 @@ botonGatos.addEventListener("click", async() => {
     dibujarMascota(mascotas);
     botonPerros.classList.add("NoClickedBtn")
     botonGatos.classList.remove("NoClickedBtn")
-    localStorage.setItem("perroGato", "gato")
+    sessionStorage.setItem("perroGato", "gato")
 })
 
 document.addEventListener("click", ({ target }) => {
     if (target.classList.contains("clicImagen")) {
-        localStorage.setItem("idMascotaDetalles", target.id)
+        sessionStorage.setItem("idMascotaDetalles", target.id)
         window.location.href = 'http://127.0.0.1:5500/pages/detallesAnimal/index.html';
     }
 });

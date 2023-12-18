@@ -9,32 +9,18 @@
 <body>
     <div class="containerTotal">
         <h1 class="titulo">Mensajes</h1>
-        <div class="contenedorChats">
-            <div class="contenedorChat">
-                <div class="contenedorImagenChat">
-                    <img id="imgChat" src="https://res.cloudinary.com/dlwr6vxib/image/upload/v1702749557/reto1/qtpfaldxggxfcy9o85up.png">
-                </div>
-                <div class="containerDetalles">
-                    <div class="primeraFila">
-                        <h3 id="NombreChat">Maria Dolores</h3>
-                        <p id="horaUltimoMensaje">4:36</p>
-                    </div>
-                    <div class="segundaFila">
-                        <p id="ultimoMensaje">¡Hola! claro, podemos acordar un lugar y hora para que conoscas...</p>
-                    </div>
-                </div>
-                <div class="divFlechaEntrar" >
-                    <img class="flechaEntrar" src="https://res.cloudinary.com/dlwr6vxib/image/upload/v1702750222/reto1/icons/b8dizgwyhrlshqyhq8d3.png">
-                </div>
-            </div>
+        <div id="chatsJS">
+            
         </div>
     </div>
 
     <footer>
         <span>
             <div id="homeDiv" class="btnHome">
-                <img id="homeImg" src="https://res.cloudinary.com/dlwr6vxib/image/upload/v1702674499/reto1/icons/en21y23yvx6u2fzqcoat.png">
-                <p id="homeP" style="display: none;">Home</p>
+                <a href="/pages/landingPage/index.html">
+                    <img id="homeImg" src="https://res.cloudinary.com/dlwr6vxib/image/upload/v1702674499/reto1/icons/en21y23yvx6u2fzqcoat.png">
+                    <p id="homeP" style="display: none;">Home</p>
+                </a>
             </div>
         </span>
         <span>
@@ -57,4 +43,6 @@
         </span>
     </footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./scripts/main.js"></script>
 </html>
