@@ -80,3 +80,39 @@ body{
 .espaciado{
     margin-bottom: 32px;
 }
+
+.contenedorInfo{
+    display: flex;
+    margin-top: 20px;
+}
+
+.informacionContc{
+    display: flex;
+    width: 50%;
+}
+
+.informacionContc img{
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    border: 2px solid #85D1CE;
+    margin-right: 7px;
+}
+
+.divContactar{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+
+.divContactar button{
+    width: 90%;
+    background-color: #0E172C;
+    color: #FFFFFE;
+    border-radius: 98px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.175px;
+}

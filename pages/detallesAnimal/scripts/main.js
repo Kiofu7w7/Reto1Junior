@@ -114,7 +114,6 @@ if (tipoRecuperado == "perro") {
 
 const dataUser = await buscarUsuarios("1").then(
     value => {
-        console.log(value.data.id_mascotas_favoritas_perro)
         let numeros = value.data.id_mascotas_favoritas_perro.split("|")
         numeros.forEach(element => {
             if (element == idRecuperado) {
