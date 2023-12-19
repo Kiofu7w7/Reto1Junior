@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+*{
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FEC7D7;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100%;
+    flex-direction: column;
+}
+
+.cabecera{
+    background-color: #FFFFFE;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 24px;
+}
+
+.cabecera .flechaAtras{
+    width: 33%;
+    align-self: flex-start;
+}
+
+.cabecera .imagenNombre{
+    text-align: center;
+    width: 33%;
+}
+
+.flechaAtras button{
+    background-color: #0E172C;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabecera .imagenNombre img{
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    border: 2px solid #85D1CE;
+    object-fit: cover;
+}
+
+#atrasButton{
+    cursor: pointer;
+}
+
+.mensajes{
+    padding: 24px;
+    height: 70vh;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.mensajes .mensaje{
+    display: flex;
+    flex-direction: column;
+    min-width: 327px;
+}
+
+.mensajes .mensajeSalidaContenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mensajeEntradaContenedor, .mensajeSalidaContenedor{
+    margin-top: 2%;
+}
+
+.mensajes .mensajeEntradaContenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mensajes .mensaje .contenedorTexto{
+    width: 100%;
+}
+
+.mensajes .mensaje .mensajeEntrada .texto{
+    background-color: #535353 !important;   
+    color: #FFFFFE; 
+}
+
+.mensajes .mensaje .mensajeSalida{
+    align-self: flex-end;
+    display: flex;
+    justify-content: end;
+}
+
+.mensajes .mensaje .mensajeEntrada{
+    align-self: flex-start;
+    display: flex;
+    justify-content: start;
+}
+
+.mensajes .mensaje .contenedorTexto .texto{
+    background-color: #FFFFFE;
+    padding: 16px;
+    border-radius: 16px;
+    width: max-content;
+}
+
+footer{
+    width: 100%;
+    padding: 2px 10px;
+    margin-top: auto;
+}
+
+footer input{
+    width: 100%;
+    padding: 12px 16px;
+}
