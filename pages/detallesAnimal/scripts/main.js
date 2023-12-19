@@ -1,3 +1,4 @@
+import { buscarUsuarios, editarUsuario } from "../../../scripts/usuarioAxios/usuarios.js";
 const urlPerros = 'https://vercer-adopta.vercel.app/caninos/'
 const urlGatos = 'https://vercer-adopta.vercel.app/gatitos/'
 const idRecuperado = sessionStorage.getItem("idMascotaDetalles")
@@ -12,6 +13,8 @@ const direccion = document.getElementById("direccionHTML")
 const historiaTitulo = document.getElementById("tituloHistoriaHTML")
 const historia = document.getElementById("historiaHtml")
 const contenedorPerso = document.getElementById("contenedorPersonalidades")
+const favorito = document.getElementById("butonFavorito")
+const imgFavorito = document.getElementById("favorito")
 
 const obtenerMascota = async (url, id) => {
     try {
@@ -58,7 +61,6 @@ if (tipoRecuperado == "perro") {
     (async () => {
         const data = await mostrasMascotas(urlPerros, idRecuperado);
         informacion = data.data
-        console.log(informacion)
         imagenUrl.setAttribute("src", informacion.url)
         nombre.innerHTML = informacion.Nombre
         if (informacion.sexo == "macho") {
@@ -108,4 +110,43 @@ if (tipoRecuperado == "perro") {
     })();
 }
 
+// FAVORITO BOTON
+
+const dataUser = await buscarUsuarios("1").then(
+    value => {
+        console.log(value.data.id_mascotas_favoritas_perro)
+        let numeros = value.data.id_mascotas_favoritas_perro.split("|")
+        numeros.forEach(element => {
+            if (element == idRecuperado) {
+                imgFavorito.setAttribute("src", "https://res.cloudinary.com/dlwr6vxib/image/upload/v1702613336/reto1/icons/jcmaxesvrzzuzudgksfe.png")
+                // se coloca imagen de que esta en favorito
+            }
+        });
+        return value
+    }
+)
+
+favorito.addEventListener('click', async function () {
+    try {
+        let favori = dataUser.data.id_mascotas_favoritas_perro
+        const numeros2 = favori.split("|");
+        const index = numeros2.indexOf(idRecuperado);
+
+        if (index !== -1) {
+            // Si ya está en favoritos, quitarlo
+            //numeros2.splice(index, 1);
+            //imgFavorito.setAttribute("src", "https://res.cloudinary.com/dlwr6vxib/image/upload/v1702613338/reto1/icons/wutq9ccbbbbb5mgd3de8.png");
+        } else {
+            // Si no está en favoritos, agregarlo
+            numeros2.push(idRecuperado);
+            imgFavorito.setAttribute("src", "https://res.cloudinary.com/dlwr6vxib/image/upload/v1702613336/reto1/icons/jcmaxesvrzzuzudgksfe.png");
+        }
+
+        favori = numeros2.join("|");
+        console.warn("QUE PASA")
+        //await editarUsuario(dataUser.data.id, dataUser.data.nombre, dataUser.data.apellidos, dataUser.data.email, dataUser.data.password, dataUser.data.telefono, dataUser.data.id_mascotas, dataUser.data.url_foto_perfil, favori, dataUser.data.id_mascotas_favoritas_gato);
+    } catch (error) {
+        console.error("Error al editar usuario:", error);
+    }
+});
 

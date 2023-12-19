@@ -24,11 +24,30 @@ footer{
     bottom: 0;
     width: 100%;
     flex-shrink: 0;
+    max-height: 10%;
 }
 
-footer img{
-    object-fit: scale-down;
+footer a{
+    text-decoration: none;
 }
+
+footer div{
+    max-height: 30px;
+}
+
+footer .btnHome{
+    background-color: #0E172C;
+    color: #85D1CE;
+    padding: 8px 16px;
+    border-radius: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    width: 103px;
+    cursor: pointer;
+}
+
 
 
 /* CODIGO EMPIEZA*/

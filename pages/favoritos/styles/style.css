@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+*{
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FEC7D7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2%;
+    height: 93%;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FFFFFE;
+    padding: 16px 0px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    flex-shrink: 0;
+    max-height: 10%;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+footer div{
+    max-height: 30px;
+}
+
+footer .btnHome{
+    background-color: #0E172C;
+    color: #85D1CE;
+    padding: 8px 16px;
+    border-radius: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    width: 103px;
+    cursor: pointer;
+}
+
+.containerMascotasTargetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(156px, 1fr));
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 5%;
+    min-height: 200px;
+    height: 100vh;
+    overflow-y: auto; 
+    align-content: start;
+}
+
+.containerMascotasTargetas img {
+    padding-top: 5px;
+    cursor: pointer;
+    width: 156px;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: -8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.animalCard {
+    position: relative;
+    width: 156px;
+    height: 250px;
+}
+
+.animalInfo {
+    position: absolute;
+    bottom: 0;
+    color: #FFFFFE;
+    font-weight: 700;
+    padding: 14px;
+}

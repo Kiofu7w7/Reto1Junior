@@ -21,7 +21,11 @@ nombre.value = dataUser.data.nombre
 apellido.value = dataUser.data.apellidos
 correo.value = dataUser.data.email
 
-botonGuardar.addEventListener('click', function() {
-    editarUsuario(dataUser.data.id, nombre.value, apellido.value, correo.value, dataUser.data.password, dataUser.data.telefono, dataUser.data.id_mascotas, dataUser.data.url_foto_perfil);
-    location.reload()
+botonGuardar.addEventListener('click', async function() {
+    try {
+        await editarUsuario(dataUser.data.id, nombre.value, apellido.value, correo.value, dataUser.data.password, dataUser.data.telefono, dataUser.data.id_mascotas, dataUser.data.url_foto_perfil, dataUser.data.id_mascotas_favoritas_perro, dataUser.data.id_mascotas_favoritas_gato);
+        location.reload();
+    } catch (error) {
+        console.error("Error al editar usuario:", error);
+    }
 });

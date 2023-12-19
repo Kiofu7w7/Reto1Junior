@@ -53,6 +53,9 @@ footer .btnHome{
     display: flex;
 }
 
+#chatDiv{
+    align-items: center;
+}
 
 footer a{
     text-decoration: none;
