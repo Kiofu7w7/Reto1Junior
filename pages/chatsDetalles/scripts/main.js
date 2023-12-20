@@ -1,8 +1,9 @@
 import { obtenerChat, enviarMensaje } from "../../../scripts/chatAxios/chat.js";
 import { buscarUsuarios } from "../../../scripts/usuarioAxios/usuarios.js";
 
-const idUsuario1 = "1"
-const idUsuario2 = "2"
+const idUsuario1 = "1" //CONSEGUIRLA CON LOCALSTORAGE DE INICIO DE SESION
+const idUsuario2 = localStorage.getItem("idChatDetalles")
+console.log(localStorage.getItem("idChatDetalles"))
 let idChat;
 const nombreChatHTML = document.getElementById("nombreChat")
 const imagenChatHTML = document.getElementById("imagenChat")

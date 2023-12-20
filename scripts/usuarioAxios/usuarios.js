@@ -32,10 +32,8 @@ export const editarUsuario = async (id, nombre, apellido, emailU, password, tele
             id_mascotas_favoritas_perro: favPerro,
             id_mascotas_favoritas_gato: favGato
         });
-        // Mostrar un mensaje de éxito al usuario si es necesario
         console.log("Usuario editado exitosamente");
     } catch (error) {
-        // Manejar el error de una manera más específica, por ejemplo, mostrar un mensaje al usuario
         console.error("Error al editar usuario:", error);
     }
 };

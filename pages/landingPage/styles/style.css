@@ -9,28 +9,28 @@ body{
     background-color: #FEC7D7;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    padding-top: 2%;
-    height: 93%;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
+/*----------------------FOOTER-------------------------------*/
 footer{
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #FFFFFE;
     padding: 16px 0px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
-    height: 7%;
     flex-shrink: 0;
-    place-items: center;
+    max-height: 10%;
 }
 
-footer img{
-    object-fit: scale-down;
+footer a{
+    text-decoration: none;
+}
+
+footer div{
+    max-height: 30px;
 }
 
 footer .btnHome{
@@ -41,98 +41,99 @@ footer .btnHome{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 40px;
+    height: auto;
     width: 103px;
     cursor: pointer;
 }
 
-.btnDivNoClick{
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-}
-
-#chatDiv{
-    align-items: center;
-}
 
 footer a{
     text-decoration: none;
     color: #85D1CE;
 }
 
+/*----------------------TITULO SUBTITULO-----------------------*/
+
 .container{
-    display: flex;
-    flex-direction: column;
-    max-width: 327px;
+    padding: 20px;
 }
 
-
-.container .circuloAzul{
-    background-color: #85D1CE;
-    border-radius: 50%;
-    padding: 5%;
-    margin: 0 8px;
-    display: flex;
+.container .titulo{
+    color: #0E172C;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin-bottom: 3%;
 }
+
+.container .subTitulo{
+    color: #0E172C;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.027px;
+    margin-bottom: 3%;
+}
+
+/*----------------------BOTONES PERRO Y GATO-----------------------*/
 
 .container .botonesPerrosGatos{
     display: flex;
     justify-content: space-between;
 }
 
-.container .botonesPerrosGatos .botonAnimal{
+.container .botonesPerrosGatos .botonAnimal {
     background-color: #0E172C;
     color: #FFFFFE;
     display: flex;
     align-items: center;
-    border-radius: 15px;
-    padding: 8px 0;
-    width: 150px;
+    width: fit-content;
+    height: fit-content;
+    padding: 8px 25px;
+    border-radius: 8px;
+    gap: 16px;
     cursor: pointer;
 }
 
-.NoClickedBtn{
-    opacity: 0.5;
+.container .botonesPerrosGatos .botonAnimal .circuloAzul{
+    background-color: #85D1CE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
 }
 
-.container .botonesPerrosGatos .botonAnimal .nombreBtn{
-    margin: 0 8px;
-}
-
-.container .botonesPerrosGatos .botonAnimal img{
+.container .botonesPerrosGatos .botonAnimal .circuloAzul .imagenBotonPerrosGatos{
     width: 40px;
+    height: 40px;
 }
 
-.titulo{
-    margin-bottom: 5%;
-    font-family: Nunito;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-}
+/*----------------------TARJETAS-----------------------*/
 
-.subTitulo{
-    margin-bottom: 5%;
-}
-
-.containerMascotasTargetas {
+.container .containerMascotasTargetas{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(156px, 1fr));
     gap: 16px;
     max-width: 400px;
-    margin: 0 auto;
-    margin-top: 5%;
-    min-height: 520px;
-    height: 100vh;
+    max-height: 100%;
     overflow-y: auto; 
-    margin-bottom: 30%;
     align-content: start;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
 }
 
-.containerMascotasTargetas img {
+.container .containerMascotasTargetas .animalCard{
+    position: relative;
+    width: 156px;
+    height: 250px;
+}
+
+.container .containerMascotasTargetas .animalCard img{
     padding-top: 5px;
     cursor: pointer;
     width: 156px;
@@ -140,23 +141,16 @@ footer a{
     object-fit: cover;
     margin-bottom: -8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
 }
 
-.containerMascotasTargetas img:nth-child(odd) {
-    padding-top: 0;
-}
-
-.containerMascotasTargetas img:nth-child(even) {
-    padding-bottom: 0;
-}
-
-.animalCard {
+.container .containerMascotasTargetas .animalCard {
     position: relative;
     width: 156px;
     height: 250px;
 }
 
-.animalInfo {
+.container .containerMascotasTargetas .animalCard .animalInfo {
     position: absolute;
     bottom: 0;
     color: #FFFFFE;

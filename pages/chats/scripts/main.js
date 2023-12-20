@@ -61,7 +61,7 @@ async function obtenerYProcesarDatos() {
                 if (element.integrantes.miembro2_id != idUser) {
                     buscarUsuarios(element.integrantes.miembro2_id)
                         .then((usuarioInfo) => {
-                            dibujarTarjetaChat(usuarioInfo,element)
+                            dibujarTarjetaChat(usuarioInfo,element,element.integrantes.miembro2_id)
                         })
                         .catch((error) => {
                             console.error(error);
@@ -69,7 +69,7 @@ async function obtenerYProcesarDatos() {
                 }else{
                     buscarUsuarios(element.integrantes.miembro1_id)
                     .then((usuarioInfo) => {
-                        dibujarTarjetaChat(usuarioInfo,element)
+                        dibujarTarjetaChat(usuarioInfo,element,element.integrantes.miembro1_id)
                     })
                     .catch((error) => {
                         console.error(error);
@@ -84,15 +84,14 @@ async function obtenerYProcesarDatos() {
 
 obtenerYProcesarDatos();
 
-function dibujarTarjetaChat(user2, dataChat) {
+function dibujarTarjetaChat(user2, dataChat, iduser2) {
     const mensajesString = dataChat.mensajes;
     const mensajesIndividuales = mensajesString.split('|');
     const ultimoMensaje = mensajesIndividuales[mensajesIndividuales.length - 1];
     const [remitente, mensaje, hora] = ultimoMensaje.match(/(\d+):'([^']+)',(\d+:\d+)/).slice(1);
     // REMITENTE ES PARA SABER SI ES LLEGADO A MI O YO ENVIE A EL FALTA ESO
-
     contenedorChats.innerHTML += `
-    <a href="#">
+    <a class="linkchat" id="${iduser2}">
         <div class="contenedorChats">
             <div class="contenedorChat">
                 <div class="contenedorImagenChat">
@@ -115,3 +114,15 @@ function dibujarTarjetaChat(user2, dataChat) {
     </a>
     `
 }
+
+document.addEventListener("click", function(event) {
+    let targetElement = event.target; 
+    while (targetElement != null) {
+        if (targetElement.classList.contains("linkchat")) {
+            localStorage.setItem('idChatDetalles', targetElement.id); 
+            window.location.href = "http://127.0.0.1:5500/pages/chatsDetalles/index.html";
+            return;
+        }
+        targetElement = targetElement.parentElement;
+    }
+});
