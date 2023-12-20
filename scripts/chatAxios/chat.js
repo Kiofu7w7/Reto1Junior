@@ -26,7 +26,8 @@ export const enviarMensaje = async (idChat, idUsuario, mensaje) => {
             const horaActual = obtenerHoraActual();
             const nuevoMensaje = `${idUsuario}:'${mensaje}',${horaActual}`;
             chatEncontrado.mensajes = chatEncontrado.mensajes ? `${chatEncontrado.mensajes}|${nuevoMensaje}` : nuevoMensaje;
-            await axios.patch(`${url}${idChat}`, chatEncontrado);
+            console.warn("FUNCIOOON")
+            await axios.put(`${url}${idChat}`, chatEncontrado);
             console.log('Mensaje enviado con éxito');
         } else {
             console.log('Chat no encontrado');

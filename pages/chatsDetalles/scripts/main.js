@@ -89,6 +89,8 @@ document.getElementById('mensajeInput').addEventListener('keydown', function(eve
 
 function enviarMensajeTexto() {
     const inputMensaje = document.getElementById('mensajeInput').value;
-    enviarMensaje(idChat, idUsuario1, inputMensaje)
+    enviarMensaje(idChat, idUsuario1, inputMensaje).then(value => {
+        location.reload();
+    })
     document.getElementById('mensajeInput').value = '';
 }

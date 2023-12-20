@@ -4,8 +4,6 @@ const container2 = document.getElementById("container-pagina2")
 const container3 = document.getElementById("container-pagina3")
 const boton1 = document.getElementById("btn-siguente")
 const boton2 = document.getElementById("btn-siguente3")
-
-
 let contador = 0
 
 bodyPag.addEventListener('click', function agrandar() {
