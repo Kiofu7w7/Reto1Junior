@@ -1,5 +1,5 @@
-const urlPerros = 'https://vercer-adopta.vercel.app/caninos'
-const urlGatos = 'https://vercer-adopta.vercel.app/gatitos'
+const urlPerros = 'https://renderadopta.onrender.com/caninos'
+const urlGatos = 'https://renderadopta.onrender.com/gatitos'
 const contenedorMasc = document.getElementById("contenedorMascotas")
 const botonPerros = document.getElementById("btnPerros")
 const botonGatos = document.getElementById("btnGatos")

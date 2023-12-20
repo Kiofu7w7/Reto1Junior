@@ -1,4 +1,4 @@
-const url = "https://vercer-adopta.vercel.app/chats/";
+const url = "https://renderadopta.onrender.com/chats/";
 
 export const obtenerChat = async (idEntrada, idSalida) => {
     try {

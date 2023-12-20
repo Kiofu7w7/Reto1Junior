@@ -31,7 +31,7 @@ function obtenerIdsMiembros(respuesta) {
 
 const buscarUsuarios = async (idUser) => {
     try {
-        const response = await axios.get("https://vercer-adopta.vercel.app/usuarios/" + idUser);
+        const response = await axios.get("https://renderadopta.onrender.com/usuarios/" + idUser);
         const nombre = response.data.nombre;
         const urlFotoPerfil = response.data.url_foto_perfil;
         return { nombre, urlFotoPerfil };
@@ -43,7 +43,7 @@ const buscarUsuarios = async (idUser) => {
 
 async function obtenerYProcesarDatos() {
     try {
-        const respuesta = await obtenerInfo("https://vercer-adopta.vercel.app/chats");
+        const respuesta = await obtenerInfo("https://renderadopta.onrender.com/chats");
 
         const idsMiembros = obtenerIdsMiembros(respuesta);
 

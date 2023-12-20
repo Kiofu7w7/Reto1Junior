@@ -1,6 +1,6 @@
 import { buscarUsuarios, editarUsuario } from "../../../scripts/usuarioAxios/usuarios.js";
-const urlPerros = 'https://vercer-adopta.vercel.app/caninos/'
-const urlGatos = 'https://vercer-adopta.vercel.app/gatitos/'
+const urlPerros = 'https://renderadopta.onrender.com/caninos/'
+const urlGatos = 'https://renderadopta.onrender.com/gatitos/'
 const idRecuperado = sessionStorage.getItem("idMascotaDetalles")
 const tipoRecuperado = sessionStorage.getItem("perroGato")
 let informacion;
@@ -133,8 +133,8 @@ favorito.addEventListener('click', async function () {
 
         if (index !== -1) {
             // Si ya está en favoritos, quitarlo
-            //numeros2.splice(index, 1);
-            //imgFavorito.setAttribute("src", "https://res.cloudinary.com/dlwr6vxib/image/upload/v1702613338/reto1/icons/wutq9ccbbbbb5mgd3de8.png");
+            numeros2.splice(index, 1);
+            imgFavorito.setAttribute("src", "https://res.cloudinary.com/dlwr6vxib/image/upload/v1702613338/reto1/icons/wutq9ccbbbbb5mgd3de8.png");
         } else {
             // Si no está en favoritos, agregarlo
             numeros2.push(idRecuperado);
@@ -142,8 +142,7 @@ favorito.addEventListener('click', async function () {
         }
 
         favori = numeros2.join("|");
-        console.warn("QUE PASA")
-        //await editarUsuario(dataUser.data.id, dataUser.data.nombre, dataUser.data.apellidos, dataUser.data.email, dataUser.data.password, dataUser.data.telefono, dataUser.data.id_mascotas, dataUser.data.url_foto_perfil, favori, dataUser.data.id_mascotas_favoritas_gato);
+        await editarUsuario(dataUser.data.id, dataUser.data.nombre, dataUser.data.apellidos, dataUser.data.email, dataUser.data.password, dataUser.data.telefono, dataUser.data.id_mascotas, dataUser.data.url_foto_perfil, favori, dataUser.data.id_mascotas_favoritas_gato);
     } catch (error) {
         console.error("Error al editar usuario:", error);
     }

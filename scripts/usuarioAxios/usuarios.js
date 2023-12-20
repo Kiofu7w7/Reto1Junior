@@ -1,4 +1,4 @@
-const url = "https://vercer-adopta.vercel.app/usuarios"
+const url = "https://renderadopta.onrender.com/usuarios"
 
 export const obtenerUsuarios = async (url) => {
     try {

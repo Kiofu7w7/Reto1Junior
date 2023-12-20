@@ -4,7 +4,7 @@ let dataGatosFav = []
 
 const obtenerUser = async (id) => {
     try {
-        const response = await axios.get("https://vercer-adopta.vercel.app/usuarios/" + id);
+        const response = await axios.get("https://renderadopta.onrender.com/usuarios/" + id);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -19,7 +19,7 @@ const favoritosGatos = userData.id_mascotas_favoritas_gato.split("|");
 
 const buscarAnimalPerros = async (id) => {
     try {
-        const response = await axios.get("https://vercer-adopta.vercel.app/caninos/" + id);
+        const response = await axios.get("https://renderadopta.onrender.com/caninos/" + id);
         return response.data; 
     } catch (error) {
         console.log(error);
@@ -35,7 +35,7 @@ async function procesarFavoritosPerros() {
 
 const buscarAnimalGatos = async (id) => {
     try {
-        const response = await axios.get("https://vercer-adopta.vercel.app/gatitos/" + id);
+        const response = await axios.get("https://renderadopta.onrender.com/gatitos/" + id);
         return response.data; 
     } catch (error) {
         console.log(error);
