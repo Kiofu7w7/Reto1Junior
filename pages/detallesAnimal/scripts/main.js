@@ -15,6 +15,14 @@ const historia = document.getElementById("historiaHtml")
 const contenedorPerso = document.getElementById("contenedorPersonalidades")
 const favorito = document.getElementById("butonFavorito")
 const imgFavorito = document.getElementById("favorito")
+const botonAtras = document.getElementById("btnAtras")
+const imagenDueño = document.getElementById("imgDueño")
+const nombresDueño = document.getElementById("nombreDueño")
+const chatDueño = document.getElementById("chatDueño")
+
+botonAtras.addEventListener('click', () => {
+    window.history.back();
+})
 
 const obtenerMascota = async (url, id) => {
     try {
@@ -81,6 +89,11 @@ if (tipoRecuperado == "perro") {
         historiaTitulo.innerText = informacion.extra.titulo
         historia.innerText = informacion.extra.descripcion
 
+        const dataUser = await buscarUsuarios(informacion.id_usuario)
+        console.log(dataUser)
+        imagenDueño.setAttribute("src",dataUser.data.url_foto_perfil)
+        nombresDueño.innerText = dataUser.data.nombre + " " + dataUser.data.apellidos
+        localStorage.setItem('idChatDetalles', dataUser.data.id); 
     })();
 }else{
     (async () => {
@@ -107,8 +120,14 @@ if (tipoRecuperado == "perro") {
         historiaTitulo.innerText = informacion.extra.titulo
         historia.innerText = informacion.extra.descripcion
 
+        const dataUser = await buscarUsuarios(informacion.id_usuario)
+        console.log(dataUser)
+        imagenDueño.setAttribute("src",dataUser.data.url_foto_perfil)
+        nombresDueño.innerText = dataUser.data.nombre + " " + dataUser.data.apellidos
+        localStorage.setItem('idChatDetalles', dataUser.data.id); 
     })();
 }
+
 
 // FAVORITO BOTON
 
@@ -148,3 +167,7 @@ favorito.addEventListener('click', async function () {
     }
 });
 
+
+chatDueño.addEventListener("click", () => {
+    window.location.href = "http://127.0.0.1:5500/pages/chatsDetalles/index.html";
+})

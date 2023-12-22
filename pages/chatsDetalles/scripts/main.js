@@ -3,7 +3,6 @@ import { buscarUsuarios } from "../../../scripts/usuarioAxios/usuarios.js";
 
 const idUsuario1 = "1" //CONSEGUIRLA CON LOCALSTORAGE DE INICIO DE SESION
 const idUsuario2 = localStorage.getItem("idChatDetalles")
-console.log(localStorage.getItem("idChatDetalles"))
 let idChat;
 const nombreChatHTML = document.getElementById("nombreChat")
 const imagenChatHTML = document.getElementById("imagenChat")
@@ -27,6 +26,7 @@ const data = async () =>{
 const chat = async () =>{
     try {
         const response = await obtenerChat(idUsuario1, idUsuario2)
+        console.log(response)
         return response   
     } catch (error) {
         console.warn(error)
@@ -46,30 +46,36 @@ data().then((info) => {
 //obtener chat
 
 function procesarMensajes(infoChat) {
-    contenedor.innerText = ""
+    if (!infoChat || !infoChat.mensajes) {
+        return; // Si infoChat es nulo o no tiene mensajes, salir de la función
+    }
+
+    contenedor.innerText = "";
     const mensajes = infoChat.mensajes.split('|');
+    
     mensajes.forEach((mensaje) => {
         const [remitente, texto, hora] = mensaje.match(/(\d+):'([^']+)',(\d+:\d+)/).slice(1);
+
         if (remitente == idUsuario1) {
             contenedor.innerHTML += `        
-            <div class="mensaje mensajeSalidaContenedor">
-                <p>${hora}</p>
-                <div class="contenedorTexto mensajeSalida">
-                    <div class="texto">
-                        <p>${texto}</p>
+                <div class="mensaje mensajeSalidaContenedor">
+                    <p>${hora}</p>
+                    <div class="contenedorTexto mensajeSalida">
+                        <div class="texto">
+                            <p>${texto}</p>
+                        </div>
                     </div>
-                </div>
-            </div>`
-        }else{
+                </div>`;
+        } else {
             contenedor.innerHTML += `
-            <div class="mensaje mensajeEntradaContenedor">
-                <p>${hora}</p>
-                <div class="contenedorTexto mensajeEntrada">
-                    <div class="texto">
-                        <p>${texto}</p>
+                <div class="mensaje mensajeEntradaContenedor">
+                    <p>${hora}</p>
+                    <div class="contenedorTexto mensajeEntrada">
+                        <div class="texto">
+                            <p>${texto}</p>
+                        </div>
                     </div>
-                </div>
-            </div>`
+                </div>`;
         }
     });
 }

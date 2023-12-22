@@ -53,6 +53,13 @@ footer .btnHome{
     margin-bottom: 7%;
 }
 
+#imagenPerfil{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #85D1CE;
+}
+
 .titulo{
     margin-bottom: 20%;
 }

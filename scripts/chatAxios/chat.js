@@ -1,14 +1,30 @@
 const url = "https://renderadopta.onrender.com/chats/";
-
+const urlAñadir = "https://renderadopta.onrender.com/chats";
 export const obtenerChat = async (idEntrada, idSalida) => {
     try {
         const response = await axios.get(url);
-        const chats = response.data;
+        let chats = response.data;
 
         const chatEncontrado = chats.find(chat =>
             (chat.integrantes.miembro1_id === idEntrada && chat.integrantes.miembro2_id === idSalida) ||
             (chat.integrantes.miembro1_id === idSalida && chat.integrantes.miembro2_id === idEntrada)
         );
+
+        if (!chatEncontrado) {
+            // Si no se encuentra el chat, crea uno nuevo y agrégalo a la lista de chats
+            console.log("NO EXISTE EL CHAT")
+            const nuevoChat = {
+                id: crypto.randomUUID(), // Asigna un nuevo ID único
+                integrantes: {
+                    miembro1_id: idEntrada,
+                    miembro2_id: idSalida
+                },
+                mensajes: ""
+            };
+
+            await axios.post(urlAñadir, nuevoChat);
+            return nuevoChat;
+        }
 
         return chatEncontrado;
     } catch (error) {
