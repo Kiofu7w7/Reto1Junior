@@ -1,13 +1,13 @@
 # RETO 1 FRONTEND
 
 > [!CAUTION]  
-> POR EL MOMENTO HAY UN ERROR EN CUANTO A LAS FUNCIONES DE ACTUALIZAR CUALQUIER TIPO DATOS.
+> Al querer revisar tener en cuenta una cosa:
 >
-> Por ejemplo este codigo se utiliza para actualizar los chats, al momento de utilizarse da un ERROR 500, al actualizarse la pagina si cambian los datos, pero en ocaciones vuelve a ser como estaba antes de los cambios, siendo imposible de actualizar los datos correactamente, se intento con el PATCH y el PUT exactamente en la linea 11.
+> 1. ABRIR ESTE LINK Y ESPERAR HASTA QUE CARGUE, RENDER SE "APAGA" SI DESPUES DE 15 MINUTOS NO SE HACE PETICIONES, AL ABRIR EL LINK TOCA ESPERAR A QUE SE ENCIENDA
+>    
+> LINK: https://renderadopta.onrender.com
 >
-> Por el momento se esta investigando si es por logica o directamente por el servicio de Vercel, se intentara probar con los servicios de gitHub.
-> 
-> ![image](https://github.com/Kiofu7w7/Reto1Junior/assets/117487196/566697d3-10ee-4a0c-9b05-947b063aec28)
+> ![image](https://github.com/Kiofu7w7/Reto1Junior/assets/117487196/bf6c37a0-50c9-412e-9473-d668e5ceb0e6)
 
 ## INTRODUCION
 
@@ -25,10 +25,11 @@ En cuanto a interfaces las unicas que faltan son propias jajaja, login y registe
 
 ## FUNCIONALIDADES 
 
-En funcionalidades tambien solo falta las de login, register y enlazar en los detalles de las mascotas el chat del dueño con el del usuario.
+En cuanto a funcionalidades solo falta crear las de login y register.
+Tambien lo planeado es organizar el codigo y limpiarlo, por que en muchas partes estoy usando axios en el mismo main en vez del Js que tengo propiamente para hacer las peticiones:
 
-![image](https://github.com/Kiofu7w7/Reto1Junior/assets/117487196/6e89e0f2-5f1b-47d6-abdc-413abe60d1cd)
-![image](https://github.com/Kiofu7w7/Reto1Junior/assets/117487196/def3b80b-f5b0-4597-b8a4-3fee161c21c9)
+![image](https://github.com/Kiofu7w7/Reto1Junior/assets/117487196/36b877e3-afff-41c3-b64f-5f43bb73fa74)
+
 
 ## ANIMACIONES
 
